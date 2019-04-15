@@ -2,10 +2,12 @@ package com.example.myapplication.ui.page1;
 
 import android.arch.lifecycle.ViewModel;
 
+import com.example.myapplication.viewmodel.BaseViewModel;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
-public class DummyViewModel extends ViewModel {
+public class DummyViewModel extends BaseViewModel {
 
     StringBuilder builder;
 
