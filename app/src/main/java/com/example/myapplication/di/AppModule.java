@@ -10,6 +10,7 @@ import com.example.myapplication.database.DummyDao;
 import com.example.myapplication.database.DummyDatabase;
 import com.google.gson.Gson;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -23,8 +24,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 *
 * */
 
-@Module
-public class AppModule {
+@Module(includes = ViewModelModule.class)
+class AppModule {
 
 
     //db

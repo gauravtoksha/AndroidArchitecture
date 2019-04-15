@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.arch.lifecycle.ViewModel;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.myapplication.di.Injectable;
+import com.example.myapplication.ui.page1.DummyViewModel;
 
 import javax.inject.Inject;
 
@@ -38,7 +40,9 @@ public class firstFragment extends Fragment implements Injectable {
     private OnFragmentInteractionListener mListener;
 
     @Inject
-    StringBuilder builder;
+    DummyViewModel dummyViewModel;
+
+
 
     public firstFragment() {
         // Required empty public constructor
@@ -75,7 +79,7 @@ public class firstFragment extends Fragment implements Injectable {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        StringBuilder builder =dummyViewModel.getBuilder();
         TextView textView = view.findViewById(R.id.firstFragText);
         textView.setText(builder.toString()+"1");
     }

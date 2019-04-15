@@ -17,8 +17,7 @@ import timber.log.Timber;
 
 public class Main2Activity extends AppCompatActivity implements HasSupportFragmentInjector,firstFragment.OnFragmentInteractionListener,secondFragment.OnFragmentInteractionListener {
 
-    @Inject
-    StringBuilder builder;
+
 
     @Inject
     DispatchingAndroidInjector<Fragment> dispatchingAndroidInjector;
@@ -28,7 +27,7 @@ public class Main2Activity extends AppCompatActivity implements HasSupportFragme
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        Timber.d(builder.toString());
+
 
         Button firstFragmentButton = findViewById(R.id.fragment1);
         Button secondFragmentButton = findViewById(R.id.fragment2);
