@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.app.Application;
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
@@ -13,9 +14,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.myapplication.di.Injectable;
 import com.example.myapplication.ui.page1.DummyViewModel;
+import com.example.myapplication.util.AppUtility;
 import com.example.myapplication.viewmodel.ViewModelFactory;
 
 import javax.inject.Inject;
@@ -90,6 +93,8 @@ public class firstFragment extends Fragment implements Injectable {
         StringBuilder builder =dummyViewModel.getBuilder();
         TextView textView = view.findViewById(R.id.firstFragText);
         textView.setText(builder.toString()+"1");
+        String internetStatus =AppUtility.isInternetAvailable(this.getContext().getApplicationContext())?"Connected":"Disconnected";
+        Toast.makeText(this.getContext(), internetStatus,Toast.LENGTH_LONG).show();
     }
 
     // TODO: Rename method, update argument and hook method into UI event
