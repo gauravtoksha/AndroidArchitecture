@@ -17,8 +17,8 @@ import timber.log.Timber;
 
 public class Main2Activity extends AppCompatActivity implements HasSupportFragmentInjector,firstFragment.OnFragmentInteractionListener,secondFragment.OnFragmentInteractionListener {
 
-
-
+    firstFragment firstFragment;
+    secondFragment secondFragment;
     @Inject
     DispatchingAndroidInjector<Fragment> dispatchingAndroidInjector;
 
@@ -31,23 +31,26 @@ public class Main2Activity extends AppCompatActivity implements HasSupportFragme
 
         Button firstFragmentButton = findViewById(R.id.fragment1);
         Button secondFragmentButton = findViewById(R.id.fragment2);
-
+        firstFragment  = new firstFragment();
+        secondFragment = new secondFragment();
 
         firstFragmentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                firstFragment firstFragment = new firstFragment();
+
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.container,firstFragment).commit();
+                fragmentTransaction.replace(R.id.container,firstFragment);
+                fragmentTransaction.commit();
             }
         });
 
         secondFragmentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                secondFragment secondFragment= new secondFragment();
+
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.container,secondFragment).commit();
+                fragmentTransaction.replace(R.id.container,secondFragment);
+                fragmentTransaction.commit();
             }
         });
     }
