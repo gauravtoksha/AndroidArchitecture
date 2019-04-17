@@ -17,7 +17,7 @@ import timber.log.Timber;
 
 /*
 it calls AndroidInjection.inject for every Activity or Fragment created
-Remember to extend Activity with HasFragmentInjector interface
+Remember to extend Activity with HasFragmentInjector interface and implement Injectable to frogment
 * */
 
 public class AppInjector {
