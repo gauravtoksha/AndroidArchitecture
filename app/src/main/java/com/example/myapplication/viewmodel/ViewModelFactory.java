@@ -13,13 +13,11 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
 
 
     private final Map<Class<? extends ViewModel>, Provider<ViewModel>> creators;
-
     // To create instance in ViewModelModule.
     @Inject
     public ViewModelFactory(Map<Class<?extends ViewModel>,Provider<ViewModel>> creators) {
         this.creators = creators;
     }
-
 
     @NonNull
     @Override

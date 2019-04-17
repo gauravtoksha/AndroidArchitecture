@@ -7,6 +7,8 @@ import com.example.myapplication.viewmodel.BaseViewModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import timber.log.Timber;
+
 public class DummyViewModel extends BaseViewModel {
 
     StringBuilder builder;
@@ -14,6 +16,8 @@ public class DummyViewModel extends BaseViewModel {
     @Inject
     public DummyViewModel( StringBuilder builder) {
         builder.append("fromViewModel");
+        Timber.tag("DummyViewModel");
+        Timber.d("Constructor Called");
         this.builder = builder;
     }
 
